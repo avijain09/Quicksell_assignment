@@ -94,7 +94,7 @@ const DashBoard = () => {
                     </div>
                   ) : (
                     <img
-                      style={{ width: "30px", height: "30px", borderRadius: "100%" }}
+                      style={{ width: "25px", height: "20px", borderRadius: "100%" }}
                       src="pp.jpg"
                       alt="UserImage"
                     />
