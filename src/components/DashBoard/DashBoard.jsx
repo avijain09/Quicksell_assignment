@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { DiCodeigniter } from "react-icons/di";
 import "./DashBoard.css";
 import Card from "../Card/Card";
 import { ReactComponent as MenuIcon } from "../../Assests/icons/3 dot menu.svg";
@@ -14,12 +13,12 @@ import { ReactComponent as Urgent } from "../../Assests/icons/SVG - Urgent Prior
 import { ReactComponent as Nopriority } from "../../Assests/icons/No-priority.svg";
 import { ReactComponent as HighPriority } from "../../Assests/icons/Img - High Priority.svg";
 import { ReactComponent as MediumPriority } from "../../Assests/icons/Img - Medium Priority.svg";
-import { ReactComponent as LowPriority} from "../../Assests/icons/Img - Low Priority.svg";
+import { ReactComponent as LowPriority } from "../../Assests/icons/Img - Low Priority.svg";
 
 const DashBoard = () => {
   const groupStatus = localStorage.getItem("group") === "status";
   const groupPriority = localStorage.getItem("group") === "priority";
-  
+
   const { selectedData, user } = useSelector(
     (state) => state.SelectDataReducer
   );
@@ -82,11 +81,11 @@ const DashBoard = () => {
                       }}
                     >
                       {["Low", "Medium", "High"].includes(item[idx].title) ? (
-                         <>
-                         {item[idx].title === "Low" && <LowPriority width="24" height="24" />}
-                         {item[idx].title === "Medium" && <MediumPriority width="24" height="24" />}
-                         {item[idx].title === "High" && <HighPriority width="24" height="24" />}
-                       </>
+                        <>
+                          {item[idx].title === "Low" && <LowPriority width="24" height="24" />}
+                          {item[idx].title === "Medium" && <MediumPriority width="24" height="24" />}
+                          {item[idx].title === "High" && <HighPriority width="24" height="24" />}
+                        </>
                       ) : item[idx].title === "Urgent" ? (
                         <Urgent style={{ width: "24px", height: "24px", cursor: "pointer" }} />
                       ) : (
@@ -95,18 +94,21 @@ const DashBoard = () => {
                     </div>
                   ) : (
                     <img
-            style={{ width: "30px", height: "30px", borderRadius: "100%" }}
-            src="pp.jpg"
-            alt="UserImage"
-          />
+                      style={{ width: "30px", height: "30px", borderRadius: "100%" }}
+                      src="pp.jpg"
+                      alt="UserImage"
+                    />
                   )}{" "}
                   <span>
-                    {item[idx]?.title} {item[idx].value?.length}
+                    {item[idx]?.title} 
+                    {" "}
+                    <span  style={{ color: 'grey' }}>{item[idx].value?.length}</span>
                   </span>
+
                 </div>
                 <div className="rightView">
-                <Add style={{ width: "20px", height: "20px", cursor: "pointer" }} />
-                <MenuIcon style={{ width: "20px", height: "20px", cursor: "pointer" }} />
+                  <Add style={{ width: "20px", height: "20px", cursor: "pointer" }} />
+                  <MenuIcon style={{ width: "20px", height: "20px", cursor: "pointer" }} />
                 </div>
               </div>
               <div className="dashList flex-gap-10">
@@ -139,11 +141,11 @@ const DashBoard = () => {
                 >
                   <Done style={{ width: "13px", height: "13px", cursor: "pointer" }} />
                 </div>{" "}
-                <span style={{ fontSize: "13px", fontWeight: "lighter" }}>Done</span> <span style={{ fontSize: "13px", color: "#8F9997" }}>0</span>
+                <span style={{ fontSize: "16px", fontWeight: "lighter" }}>Done</span> <span style={{ fontSize: "13px", color: "#8F9997" }}>0</span>
               </div>
               <div className="rightView">
-              <Add style={{ width: "20px", height: "20px", cursor: "pointer" }} />
-              <MenuIcon style={{ width: "20px", height: "20px", cursor: "pointer" }} />
+                <Add style={{ width: "20px", height: "20px", cursor: "pointer" }} />
+                <MenuIcon style={{ width: "20px", height: "20px", cursor: "pointer" }} />
               </div>
             </div>
             <div className="dashCardHeading flex-sb">
@@ -157,13 +159,13 @@ const DashBoard = () => {
                     fontWeight: 200,
                   }}
                 >
-                  <Cancelled style={{ width: "13px", height: "13px", cursor: "pointer" }}/>
+                  <Cancelled style={{ width: "13px", height: "13px", cursor: "pointer" }} />
                 </div>{" "}
-                <span style={{ fontSize: "13px", fontWeight: "lighter" }}>Canceled</span> <span style={{ fontSize: "13px", color: "#8F9997" }}>0</span>
+                <span style={{ fontSize: "16px", fontWeight: "lighter" }}>Canceled</span> <span style={{ fontSize: "13px", color: "#8F9997" }}>0</span>
               </div>
               <div className="rightView">
-              <Add style={{ width: "20px", height: "20px", cursor: "pointer" }} />
-              <MenuIcon style={{ width: "20px", height: "20px", cursor: "pointer" }} />
+                <Add style={{ width: "20px", height: "20px", cursor: "pointer" }} />
+                <MenuIcon style={{ width: "20px", height: "20px", cursor: "pointer" }} />
               </div>
             </div>
           </>
